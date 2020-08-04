@@ -1,41 +1,26 @@
-# clear-dependencies-plugin-kt
-
-![Build](https://github.com/raydenvoldeskine/clear-dependencies-plugin-kt/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+# Clear Dependencies Plug-In
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be
-extracted by the [Gradle](/build.gradle.kts) during the build process.
+As we all know, optimal dependencies between classes, packages, components etc. are essential for the life and survival of the software product. Yet we naturally spend most of our developent time looking at code, as dependencies were barely existing. But they do, and, oh boy, how the do it. When not being taken care of, they grow and grow in count, assuring us hard hours and days spent trying to refactor. 
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+## What's in for me? 
+
+This plugin aims to reveal your dependencies during coding, so you'd get a chance to take care of them appropriately. Consider following practical cases: 
+
+* Dependency that should not be there 
+* Surprising class depends on yours 
+* Cyclic dependencies considered generally evil, except for the classes in the same package 
+
+## How does it look like?
+
+It's an additional panel you can activate:
+
+![screenshot](https://github.com/raydenvoldeskine/clear-dependencies-plugin/blob/master/Screenshot.png "Screenshot")
+
+
+## Availability 
+
+Current version support Java Android projects only. Chances are more support follows, as far as I add some more dependencies to this project. 
+
 <!-- Plugin description end -->
-
-## Installation
-
-- Using IDE built-in plugin system:
-  
-  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "clear-dependencies-plugin-kt"</kbd> >
-  <kbd>Install Plugin</kbd>
-  
-- Manually:
-
-  Download the [latest release](https://github.com/raydenvoldeskine/clear-dependencies-plugin-kt/releases/latest) and install it manually using
-  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
-
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
-
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
