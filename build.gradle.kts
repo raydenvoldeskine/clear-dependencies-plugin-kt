@@ -106,7 +106,7 @@ tasks {
 
     publishPlugin {
         dependsOn("patchChangelog")
-        token(System.getenv("PUBLISH_TOKEN"))
+        token(System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken"))
         channels(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first())
     }
 }
