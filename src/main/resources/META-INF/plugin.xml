@@ -12,7 +12,7 @@
   <depends>com.intellij.modules.java</depends>
   <depends>org.jetbrains.android</depends>
 
-  <idea-version since-build="182.771"/>
+  <idea-version since-build="192.7142.36"/>
   <extensions defaultExtensionNs="com.intellij">
     <toolWindow id="Dependencies"
                 icon="/Resources/plus.png"
