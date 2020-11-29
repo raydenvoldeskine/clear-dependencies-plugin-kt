@@ -8,13 +8,17 @@ import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 
 
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.WindowManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
 import javax.annotation.Nonnull;
 import javax.swing.*;
+import java.awt.*;
 import java.util.*;
 
 public class DependencyListViewModel extends Observable {
@@ -26,10 +30,18 @@ public class DependencyListViewModel extends Observable {
 
     public DependencyListViewModel(){
 
-        DataContext dataContext = DataManager.getInstance().getDataContext();
-        this.project = DataKeys.PROJECT.getData(dataContext);
-        this.analyser = ProjectAnalyserFactory.createAnalyser(project);
+        Project[] projects = ProjectManager.getInstance().getOpenProjects();
+        Project activeProject = null;
+        for (Project project : projects) {
+            Window window = WindowManager.getInstance().suggestParentWindow(project);
+            if (window != null && window.isActive()) {
+                activeProject = project;
+            }
+        }
+        this.project = activeProject;
+
         if (project != null){
+            this.analyser = ProjectAnalyserFactory.createAnalyser(project);
             editor = FileEditorManager.getInstance(project).getSelectedEditor();
             analyser.setCurrentEditor(editor);
 

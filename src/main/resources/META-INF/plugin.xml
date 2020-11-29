@@ -10,10 +10,9 @@
 
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.java</depends>
-
-
-  <idea-version since-build="182.0"/>
   <depends>org.jetbrains.android</depends>
+
+  <idea-version since-build="182.771"/>
   <extensions defaultExtensionNs="com.intellij">
     <toolWindow id="Dependencies"
                 icon="/Resources/plus.png"
