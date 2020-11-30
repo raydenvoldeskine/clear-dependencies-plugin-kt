@@ -1,15 +1,10 @@
 
 # clear-dependencies-plugin-kt Changelog
 
-## [1.2.1]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
+## [1.2.2]
 
 ### Fixed
 
-### Security
+* Support for Android Studio 3.6
+
+
