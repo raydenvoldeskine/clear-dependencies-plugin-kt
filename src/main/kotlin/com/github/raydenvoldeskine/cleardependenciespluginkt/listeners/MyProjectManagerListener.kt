@@ -7,6 +7,6 @@ import com.github.raydenvoldeskine.cleardependenciespluginkt.services.MyProjectS
 internal class MyProjectManagerListener : ProjectManagerListener {
 
     override fun projectOpened(project: Project) {
-        project.getService(MyProjectService::class.java)
+        //project.getService(MyProjectService::class.java)
     }
 }
