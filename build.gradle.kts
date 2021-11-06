@@ -1,4 +1,4 @@
-import io.gitlab.arturbosch.detekt.Detekt
+
 import org.jetbrains.changelog.closure
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -13,9 +13,9 @@ plugins {
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
     id("org.jetbrains.changelog") version "0.4.0"
     // detekt linter - read more: https://detekt.github.io/detekt/kotlindsl.html
-    id("io.gitlab.arturbosch.detekt") version "1.10.0"
+    //id("io.gitlab.arturbosch.detekt") version "1.10.0"
     // ktlint linter - read more: https://github.com/JLLeitschuh/ktlint-gradle
-    id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
+    //id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
 }
 
 // Import variables from gradle.properties file
@@ -39,7 +39,7 @@ repositories {
 }
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
+    //detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
 }
 
 // Configure gradle-intellij-plugin plugin.
@@ -57,18 +57,7 @@ intellij {
     setPlugins("java", "android")
 }
 
-// Configure detekt plugin.
-// Read more: https://detekt.github.io/detekt/kotlindsl.html
-detekt {
-    config = files("./detekt-config.yml")
-    buildUponDefaultConfig = true
 
-    reports {
-        html.enabled = false
-        xml.enabled = false
-        txt.enabled = false
-    }
-}
 
 tasks {
     // Set the compatibility versions to 1.8
@@ -82,9 +71,6 @@ tasks {
         }
     }
 
-    withType<Detekt> {
-        jvmTarget = "1.8"
-    }
 
     patchPluginXml {
         version(pluginVersion)
