@@ -66,6 +66,8 @@ public class CodeProcessorJava extends CodeProcessor {
                         .filter(ref -> outgoing.stream().noneMatch(entry -> entry.getName().equals(ref.getName())))
                         .collect(Collectors.toList()));
 
+                // This part is only if project includes other packages
+
                 Arrays.stream(importList.getImportStatements())
                         .map(PsiImportStatementBase::getImportReference)
                         .filter(Objects::nonNull)
