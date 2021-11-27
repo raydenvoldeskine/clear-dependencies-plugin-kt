@@ -3,6 +3,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import org.jetbrains.kotlin.psi.KtFile;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
