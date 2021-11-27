@@ -144,7 +144,6 @@ public class CodeProcessorJava extends CodeProcessor {
 
                 for (PsiReference ref: refs){
                     PsiElement element = ref.getElement();
-                    PsiJavaCodeReferenceElement javaElement = (PsiJavaCodeReferenceElement)element;
                     PsiClass refClass = PsiUtil.getTopLevelClass(element);
                     PsiFile refFile = element.getContainingFile();
                     if (refClass != null && refFile != null) {
